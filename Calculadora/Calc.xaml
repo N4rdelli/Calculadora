@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Calculadora.Calc"
+             >
+
+
+    
+
+    <Grid ColumnDefinitions="*,*,*,*"
+          RowDefinitions="160,*,*,*,*,*"
+          ColumnSpacing="10"
+          RowSpacing="10">
+
+        <!-- Definindo um estilo específico para propriedades de determinados itens -->
+        <Grid.Resources>
+            <ResourceDictionary>
+                <Style TargetType="Button">
+                    <Setter Property="CornerRadius" Value="100" />
+                    <Setter Property="BackgroundColor" Value="{AppThemeBinding Light='#F7F0FF', Dark='#282931'}" />
+                    <Setter Property="FontSize" Value="30" />
+                    <Setter Property="TextColor" Value="{AppThemeBinding Light='Black', Dark='White'}" />
+                    <Setter Property="MaximumWidthRequest" Value="95" />
+                    <Setter Property="MaximumHeightRequest" Value="95"/>
+                </Style>
+            </ResourceDictionary>
+        </Grid.Resources>
+
+        <!-- Código -->
+        
+        <Border Grid.Column="0"
+                Grid.Row="0"
+                Grid.ColumnSpan="4"
+                StrokeShape="RoundRectangle 0,0,30,30"
+                StrokeThickness="0">
+
+            <Grid ColumnDefinitions="*"
+                  RowDefinitions="40,*"
+                  Padding="0"
+                  BackgroundColor="{AppThemeBinding Light='#FAFAFA', Dark='#202020'}">
+                
+                <Label
+                    x:Name="lblHistorico"
+                    Grid.Row="0"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="End"
+                    FontSize="20"
+                    Margin="0,0,15,0"
+                    Text="0" />
+
+                <Label
+                    x:Name="lblResultado"
+                    Grid.Row="1"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="End"
+                    FontSize="50"
+                    Margin="0,0,15,0"
+                    Text="0" />
+                
+            </Grid>
+
+        </Border>
+
+        <Button x:Name="btnAC" Clicked="btnCancel_Clicked" Grid.Column="0" Grid.Row="1" Text="AC" BackgroundColor="{AppThemeBinding Light='#9FA2AF', Dark='#50577A'}" TextColor="{AppThemeBinding Light='White', Dark='Black'}"/>
+        <Button x:Name="btnC" Clicked="btnCancel_Clicked" Grid.Column="1" Grid.Row="1" Text="C" BackgroundColor="{AppThemeBinding Light='#9FA2AF', Dark='#50577A'}" TextColor="{AppThemeBinding Light='White', Dark='Black'}"/>
+        <Button x:Name="btnClr" Clicked="btnCancel_Clicked" Grid.Column="2" Grid.Row="1" Text="Clr" BackgroundColor="{AppThemeBinding Light='#9FA2AF', Dark='#50577A'}" TextColor="{AppThemeBinding Light='White', Dark='Black'}"/>
+        <Button x:Name="btnDivisao" Grid.Column="3" Grid.Row="1" Text="÷" BackgroundColor="{AppThemeBinding Light='#BB86FC', Dark='#BB86FC'}" TextColor="{AppThemeBinding Light='White', Dark='Black'}" Clicked="btnOperador_Clicked"/>
+
+        <Button x:Name="btn7" Grid.Column="0" Grid.Row="2" Text="7" Clicked="insertNumber_Clicked"/>
+        <Button x:Name="btn8" Grid.Column="1" Grid.Row="2" Text="8" Clicked="insertNumber_Clicked"/>
+        <Button x:Name="btn9" Grid.Column="2" Grid.Row="2" Text="9" Clicked="insertNumber_Clicked"/>
+        <Button x:Name="btnMultiplicacao" Grid.Column="3" Grid.Row="2" Text="×" BackgroundColor="{AppThemeBinding Light='#BB86FC', Dark='#BB86FC'}" TextColor="{AppThemeBinding Light='White', Dark='Black'}" Clicked="btnOperador_Clicked"/>
+
+        <Button x:Name="btn4" Grid.Column="0" Grid.Row="3" Text="4" Clicked="insertNumber_Clicked"/>
+        <Button x:Name="btn5" Grid.Column="1" Grid.Row="3" Text="5" Clicked="insertNumber_Clicked"/>
+        <Button x:Name="btn6" Grid.Column="2" Grid.Row="3" Text="6" Clicked="insertNumber_Clicked"/>
+        <Button x:Name="btnSubtracao" Grid.Column="3" Grid.Row="3" Text="-" BackgroundColor="{AppThemeBinding Light='#BB86FC', Dark='#BB86FC'}" TextColor="{AppThemeBinding Light='White', Dark='Black'}" Clicked="btnOperador_Clicked" />
+
+        <Button x:Name="btn1" Grid.Column="0" Grid.Row="4" Text="1" Clicked="insertNumber_Clicked"/>
+        <Button x:Name="btn2" Grid.Column="1" Grid.Row="4" Text="2" Clicked="insertNumber_Clicked"/>
+        <Button x:Name="btn3" Grid.Column="2" Grid.Row="4" Text="3" Clicked="insertNumber_Clicked"/>
+        <Button x:Name="btnSoma" Grid.Column="3" Grid.Row="4" Text="+" BackgroundColor="{AppThemeBinding Light='#BB86FC', Dark='#BB86FC'}" TextColor="{AppThemeBinding Light='White', Dark='Black'}" Clicked="btnOperador_Clicked"/>
+
+        <Button x:Name="btn0" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" Text="0" MaximumWidthRequest="205" Clicked="insertNumber_Clicked"/>
+        <Button x:Name="btnDecimal" Grid.Column="2" Grid.Row="5" Text="," Clicked="btnDecimal_Clicked"/>
+        <Button x:Name="btnResultado" Grid.Column="3" Grid.Row="5" Text="=" BackgroundColor="{AppThemeBinding Light='#BB86FC', Dark='#BB86FC'}" TextColor="{AppThemeBinding Light='White', Dark='Black'}" Clicked="btnResultado_Clicked"/>
+
+    </Grid>
+
+</ContentPage>
