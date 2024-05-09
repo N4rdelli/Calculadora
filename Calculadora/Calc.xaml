@@ -46,7 +46,7 @@
                     HorizontalTextAlignment="End"
                     FontSize="20"
                     Margin="0,0,15,0"
-                    Text="0" />
+                    Text="" />
 
                 <Label
                     x:Name="lblResultado"
@@ -64,26 +64,26 @@
         <Button x:Name="btnAC" Clicked="btnCancel_Clicked" Grid.Column="0" Grid.Row="1" Text="AC" BackgroundColor="{AppThemeBinding Light='#9FA2AF', Dark='#50577A'}" TextColor="{AppThemeBinding Light='White', Dark='Black'}"/>
         <Button x:Name="btnC" Clicked="btnCancel_Clicked" Grid.Column="1" Grid.Row="1" Text="C" BackgroundColor="{AppThemeBinding Light='#9FA2AF', Dark='#50577A'}" TextColor="{AppThemeBinding Light='White', Dark='Black'}"/>
         <Button x:Name="btnClr" Clicked="btnCancel_Clicked" Grid.Column="2" Grid.Row="1" Text="Clr" BackgroundColor="{AppThemeBinding Light='#9FA2AF', Dark='#50577A'}" TextColor="{AppThemeBinding Light='White', Dark='Black'}"/>
-        <Button x:Name="btnDivisao" Grid.Column="3" Grid.Row="1" Text="÷" BackgroundColor="{AppThemeBinding Light='#BB86FC', Dark='#BB86FC'}" TextColor="{AppThemeBinding Light='White', Dark='Black'}" Clicked="btnOperador_Clicked"/>
+        <Button x:Name="btnDivisao" Grid.Column="3" Grid.Row="1" Text="÷" BackgroundColor="{AppThemeBinding Light='#BB86FC', Dark='#BB86FC'}" TextColor="{AppThemeBinding Light='White', Dark='Black'}" Clicked="calc_Clicked"/>
 
-        <Button x:Name="btn7" Grid.Column="0" Grid.Row="2" Text="7" Clicked="insertNumber_Clicked"/>
-        <Button x:Name="btn8" Grid.Column="1" Grid.Row="2" Text="8" Clicked="insertNumber_Clicked"/>
-        <Button x:Name="btn9" Grid.Column="2" Grid.Row="2" Text="9" Clicked="insertNumber_Clicked"/>
-        <Button x:Name="btnMultiplicacao" Grid.Column="3" Grid.Row="2" Text="×" BackgroundColor="{AppThemeBinding Light='#BB86FC', Dark='#BB86FC'}" TextColor="{AppThemeBinding Light='White', Dark='Black'}" Clicked="btnOperador_Clicked"/>
+        <Button x:Name="btn7" Grid.Column="0" Grid.Row="2" Text="7" Clicked="calc_Clicked"/>
+        <Button x:Name="btn8" Grid.Column="1" Grid.Row="2" Text="8" Clicked="calc_Clicked"/>
+        <Button x:Name="btn9" Grid.Column="2" Grid.Row="2" Text="9" Clicked="calc_Clicked"/>
+        <Button x:Name="btnMultiplicacao" Grid.Column="3" Grid.Row="2" Text="×" BackgroundColor="{AppThemeBinding Light='#BB86FC', Dark='#BB86FC'}" TextColor="{AppThemeBinding Light='White', Dark='Black'}" Clicked="calc_Clicked"/>
 
-        <Button x:Name="btn4" Grid.Column="0" Grid.Row="3" Text="4" Clicked="insertNumber_Clicked"/>
-        <Button x:Name="btn5" Grid.Column="1" Grid.Row="3" Text="5" Clicked="insertNumber_Clicked"/>
-        <Button x:Name="btn6" Grid.Column="2" Grid.Row="3" Text="6" Clicked="insertNumber_Clicked"/>
-        <Button x:Name="btnSubtracao" Grid.Column="3" Grid.Row="3" Text="-" BackgroundColor="{AppThemeBinding Light='#BB86FC', Dark='#BB86FC'}" TextColor="{AppThemeBinding Light='White', Dark='Black'}" Clicked="btnOperador_Clicked" />
+        <Button x:Name="btn4" Grid.Column="0" Grid.Row="3" Text="4" Clicked="calc_Clicked"/>
+        <Button x:Name="btn5" Grid.Column="1" Grid.Row="3" Text="5" Clicked="calc_Clicked"/>
+        <Button x:Name="btn6" Grid.Column="2" Grid.Row="3" Text="6" Clicked="calc_Clicked"/>
+        <Button x:Name="btnSubtracao" Grid.Column="3" Grid.Row="3" Text="-" BackgroundColor="{AppThemeBinding Light='#BB86FC', Dark='#BB86FC'}" TextColor="{AppThemeBinding Light='White', Dark='Black'}" Clicked="calc_Clicked" />
 
-        <Button x:Name="btn1" Grid.Column="0" Grid.Row="4" Text="1" Clicked="insertNumber_Clicked"/>
-        <Button x:Name="btn2" Grid.Column="1" Grid.Row="4" Text="2" Clicked="insertNumber_Clicked"/>
-        <Button x:Name="btn3" Grid.Column="2" Grid.Row="4" Text="3" Clicked="insertNumber_Clicked"/>
-        <Button x:Name="btnSoma" Grid.Column="3" Grid.Row="4" Text="+" BackgroundColor="{AppThemeBinding Light='#BB86FC', Dark='#BB86FC'}" TextColor="{AppThemeBinding Light='White', Dark='Black'}" Clicked="btnOperador_Clicked"/>
+        <Button x:Name="btn1" Grid.Column="0" Grid.Row="4" Text="1" Clicked="calc_Clicked"/>
+        <Button x:Name="btn2" Grid.Column="1" Grid.Row="4" Text="2" Clicked="calc_Clicked"/>
+        <Button x:Name="btn3" Grid.Column="2" Grid.Row="4" Text="3" Clicked="calc_Clicked"/>
+        <Button x:Name="btnSoma" Grid.Column="3" Grid.Row="4" Text="+" BackgroundColor="{AppThemeBinding Light='#BB86FC', Dark='#BB86FC'}" TextColor="{AppThemeBinding Light='White', Dark='Black'}" Clicked="calc_Clicked"/>
 
-        <Button x:Name="btn0" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" Text="0" MaximumWidthRequest="205" Clicked="insertNumber_Clicked"/>
+        <Button x:Name="btn0" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" Text="0" MaximumWidthRequest="205" Clicked="calc_Clicked"/>
         <Button x:Name="btnDecimal" Grid.Column="2" Grid.Row="5" Text="," Clicked="btnDecimal_Clicked"/>
-        <Button x:Name="btnResultado" Grid.Column="3" Grid.Row="5" Text="=" BackgroundColor="{AppThemeBinding Light='#BB86FC', Dark='#BB86FC'}" TextColor="{AppThemeBinding Light='White', Dark='Black'}" Clicked="btnResultado_Clicked"/>
+        <Button x:Name="btnResultado" Grid.Column="3" Grid.Row="5" Text="=" BackgroundColor="{AppThemeBinding Light='#BB86FC', Dark='#BB86FC'}" TextColor="{AppThemeBinding Light='White', Dark='Black'}" Clicked="btnIgual_Clicked"/>
 
     </Grid>
 

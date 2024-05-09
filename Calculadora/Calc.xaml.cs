@@ -1,3 +1,5 @@
+using System.Data;
+
 namespace Calculadora;
 
 public partial class Calc : ContentPage
@@ -7,25 +9,62 @@ public partial class Calc : ContentPage
         InitializeComponent();
 	}
 
-    private void insertNumber_Clicked(object sender, EventArgs e)
+    int contador = 0;
+
+    private void calc_Clicked(object sender, EventArgs e)
     {
         Button b = (Button)sender;
         float f = float.TryParse(b.Text, out float res) ? res : 0;
 
-        lblResultado.Text = lblResultado.Text == "0" ? f.ToString() : lblResultado.Text + f.ToString();
+        if (f != 0)
+        {
+            lblResultado.Text = lblResultado.Text == "0" ? f.ToString() : lblResultado.Text + f.ToString();
+            if (contador >= 1)
+                result_Clicked();
+        }
+        else
+        {
+            if(lblResultado.Text.Substring(lblResultado.Text.Length - 1) == "+" ||
+                lblResultado.Text.Substring(lblResultado.Text.Length - 1) == "-" ||
+                lblResultado.Text.Substring(lblResultado.Text.Length - 1) == "×" ||
+                lblResultado.Text.Substring(lblResultado.Text.Length - 1) == "÷")
+            {
+                lblResultado.Text = lblResultado.Text.Substring(0, lblResultado.Text.Length - 1) + b.Text;
+            }
+            else
+            {
+                lblResultado.Text += b.Text;
+                contador++; 
+            }
+        }
     }
+
+    private void result_Clicked()
+    {
+        var calcular = lblResultado.Text.Replace("×", "*").Replace("÷", "/");
+        double resultado = Convert.ToDouble(new DataTable().Compute(calcular, null));
+
+        lblHistorico.Text = resultado.ToString();
+    }
+
+    private void btnIgual_Clicked(object sender, EventArgs e)
+    {
+        if(lblHistorico.Text != "")
+        {
+            lblResultado.Text = lblHistorico.Text;
+            lblHistorico.Text = "";
+        }
+        
+    }
+
 
     private void btnCancel_Clicked(object sender, EventArgs e)
     {
         Button b = (Button)sender;
 
-        if(b == btnAC)
+        if(b == btnAC || b == btnC)
         {
             lblHistorico.Text = "0";
-            lblResultado.Text = "0";
-        }
-        else if(b == btnC)
-        {
             lblResultado.Text = "0";
         }
         else
@@ -52,6 +91,9 @@ public partial class Calc : ContentPage
         }
     }
 
+
+
+    //Métodos que não estão sendo utilizados
     private void btnOperador_Clicked(object sender, EventArgs e)
     {
         Button b = ( Button )sender;
@@ -67,7 +109,13 @@ public partial class Calc : ContentPage
         lblResultado.Text = "0";
 
     }
+    private void insertNumber_Clicked(object sender, EventArgs e)
+    {
+        Button b = (Button)sender;
+        float f = float.TryParse(b.Text, out float res) ? res : 0;
 
+        lblResultado.Text = lblResultado.Text == "0" ? f.ToString() : lblResultado.Text + f.ToString();
+    }
     private void btnResultado_Clicked(object sender, EventArgs e)
     {
         string final = lblHistorico.Text + " " + lblResultado.Text;
